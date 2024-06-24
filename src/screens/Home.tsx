@@ -10,17 +10,18 @@ import {
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
-import Chat from './Chat';
-import Account from './Account';
-import Setting from './Setting';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AccountMenu from './AccountMenu';
+import History from './History';
+import Services from './Services';
 
 const Tab = createBottomTabNavigator();
 
 const Home = () => {
   return (
     // <SafeAreaView style={styles.container}>
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    // tabBarShowLabel:false
+    <Tab.Navigator screenOptions={{headerTitleAlign:'center',headerTintColor:'#1679AB',}}>
       <Tab.Screen
         name="HomeScreen"
         component={HomeScreen}
@@ -32,30 +33,31 @@ const Home = () => {
         }}
       />
       <Tab.Screen
-        name="Chat"
-        component={Chat}
+        name="Services"
+        component={Services}
         options={{
-          tabBarLabel: 'Chat',
+          // tabBarLabel: 'Chat',
           tabBarIcon: ({color, size}) => (
-            <Icon name="comment" color={color} size={size} />
+            <Icon name="list" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="Setting"
-        component={Setting}
+        name="History"
+        component={History}
         options={{
-          tabBarLabel: 'Setting',
+          // tabBarLabel: 'Setting',
+          
           tabBarIcon: ({color, size}) => (
-            <Icon name="gear" color={color} size={size} />
+            <Icon name="calendar" color={color} size={size} />
           ),
         }}
       />
         <Tab.Screen
           name="Account"
-          component={Account}
+          component={AccountMenu}
           options={{
-            tabBarLabel: 'Account',
+            // tabBarLabel: 'Account',
             tabBarIcon: ({color, size}) => (
               <Icon name="user" color={color} size={size} />
             ),

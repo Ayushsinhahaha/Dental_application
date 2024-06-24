@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Setting = () => {
+const History = () => {
   return (
     <View>
-      <Text>Setting</Text>
+      <Text>History</Text>
     </View>
   )
 }
 
-export default Setting
+export default History
 
 const styles = StyleSheet.create({})
