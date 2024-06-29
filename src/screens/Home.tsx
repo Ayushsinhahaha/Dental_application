@@ -12,8 +12,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AccountMenu from './AccountMenu';
-import History from './History';
-import Services from './Services';
+import Charges from './Charges';
+import Search from './Search';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,6 +26,7 @@ const Home = () => {
         name="HomeScreen"
         component={HomeScreen}
         options={{
+          headerShown:false,
           tabBarLabel: 'Home',
           tabBarIcon: ({color, size}) => (
             <Icon name="home" color={color} size={size} />
@@ -33,23 +34,23 @@ const Home = () => {
         }}
       />
       <Tab.Screen
-        name="Services"
-        component={Services}
+        name="Search"
+        component={Search}
         options={{
           // tabBarLabel: 'Chat',
           tabBarIcon: ({color, size}) => (
-            <Icon name="list" color={color} size={size} />
+            <Icon name="search" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="History"
-        component={History}
+        name="Charges"
+        component={Charges}
         options={{
           // tabBarLabel: 'Setting',
           
           tabBarIcon: ({color, size}) => (
-            <Icon name="calendar" color={color} size={size} />
+            <Icon name="dollar" color={color} size={size} />
           ),
         }}
       />

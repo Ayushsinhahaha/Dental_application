@@ -8,6 +8,10 @@ import Login from './src/screens/Login';
 import RegisterUser from './src/screens/RegisterUser';
 import ChangePassword from './src/screens/ChangePassword';
 import PaymentMethod from './src/screens/PaymentMethod';
+import HomeScreen from './src/screens/HomeScreen';
+import UpdateInformation from './src/screens/UpdateInformation';
+import Notifications from './src/screens/Notifications';
+import Splash from './src/screens/Splash';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +19,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Splash"
+          component={Splash}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="FirstScreen"
           component={FirstScreen}
@@ -61,6 +70,25 @@ const App = () => {
             statusBarColor: '#1679AB',
           }}
         />
+        <Stack.Screen
+          name="Update Information"
+          component={UpdateInformation}
+          options={{
+            headerTitleAlign: 'center',
+            headerTintColor: '#1679AB',
+            statusBarColor: '#1679AB',
+          }}
+        />
+        <Stack.Screen
+          name="Notification"
+          component={Notifications}
+          options={{
+            headerTitleAlign: 'center',
+            headerTintColor: '#1679AB',
+            statusBarColor: '#1679AB',
+          }}
+        />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -9,7 +9,7 @@ import {
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View
@@ -77,7 +77,7 @@ const Login = () => {
         style={{alignSelf: 'flex-end', marginRight: 20, bottom: 20}}>
         <Text style={{color: '#fff', fontSize: 16}}>Forgot Password</Text>
       </TouchableOpacity>
-      <TouchableOpacity
+      <TouchableOpacity onPress={()=>navigation.navigate('Home')}
         style={{
           width: '80%',
           justifyContent: 'center',
@@ -97,6 +97,12 @@ const Login = () => {
           }}>
           SIGN IN
         </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={{alignSelf: 'flex-end', marginRight: 20, flexDirection:'row'}}>
+        <Text style={{color: '#fff', fontSize: 16}}>Don't have an account? </Text>
+        <TouchableOpacity onPress={()=>navigation.navigate('Create Account')}   ><Text style={{color:'blue',fontWeight:'900'}}>Register</Text></TouchableOpacity>
       </TouchableOpacity>
       <View style={{justifyContent: 'center', alignSelf: 'center', top: 60}}>
         <Text style={{color: '#fff', fontWeight: '600'}}>
